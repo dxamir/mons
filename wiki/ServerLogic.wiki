@@ -11,11 +11,4 @@ Here is how it works.
   * The action-mapped function gets called by the dispatcher, returning a value of whether or not the action went smoothly.
   * The dispatcher logs the action along with its resulting status and gives the action result back to the requester.
 
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+This model allows extensibility to cover any other turn-based game. It is apparent that there is no Monopoly-specific point anywhere in the list.
