@@ -11,8 +11,8 @@ Philosophically, an instance of this class represents a single game with its boa
 
 The class stores the following data for the gamestate:
 
-  * All 40 slots of the board (class Slot).
-  * All players playing on the board (class MonopolyPlayer). This class includes money balance, properties, token and more, and is generated from the class Player.
+  * All 40 slots of the board (class `Slot`).
+  * All players playing on the board (class `MonopolyPlayer`). This class includes money balance, properties, token and more, and is generated from the class Player.
   * Player who has the current turn.
 
 = Starting a game =
