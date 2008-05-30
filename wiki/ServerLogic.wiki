@@ -1,0 +1,21 @@
+#summary The general logic of the server
+#labels Design
+
+= Server General Logic =
+
+Here is how it works.
+
+  * It is known that the only way to modify the gamestate is through 'actions'.
+  * The server receives an action from HTTP. In order to identify the context of the action, each action ships with a respective Game ID (can be omitted when the action is not specific-game related) and User ID (mandatory).
+  * The server parses, validates and dispatches the action to the corresponding logic, mapping it to a class member function and passing it any extra parameters that were given through the request.
+  * The action-mapped function gets called by the dispatcher, returning a value of whether or not the action went smoothly.
+  * The dispatcher logs the action along with its resulting status and gives the action result back to the requester.
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
