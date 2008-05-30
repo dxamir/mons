@@ -1,0 +1,1 @@
+This folder should contain any project-related (attention: not software-related) images.
