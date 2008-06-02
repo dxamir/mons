@@ -12,3 +12,15 @@ Here is how it works.
   * The dispatcher logs the action along with its resulting status and gives the action result back to the requester.
 
 This model allows extensibility to cover any other turn-based game. It is apparent that there is no Monopoly-specific point anywhere in the list.
+
+= Request / Response flow =
+It should be pointed out that the flow of requests and responses are asynchronous. As a response to an action request the server sends only whether or not the action went fine, and if not fine - what the problem was. The gamestate changes are tracked by the clients separately. The client which initiated the action, however, knows there is a gamestate change data to receive when it gets a positive response for its action.
+
+Each gamestate change action is tracked with an automatically incrementing unique identifier, within the context of the game. Each client participating in the game can request all gamestate change actions after any action ID they need. This makes it simple for the clients to load the saved games, tracking the changes from the beginning to the current state.
+
+
+
+For example (> = Action Request, < = Action Response):
+
+> turn
+< dice: 1/2, chance: 'something happened', 
