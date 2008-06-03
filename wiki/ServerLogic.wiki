@@ -1,6 +1,8 @@
 #summary The general logic of the server
 #labels Phase-Design
 
+[http://mons.googlecode.com/svn/trunk/images/logo/mons.gif]
+
 = Server General Logic =
 
 Here is how it works.
