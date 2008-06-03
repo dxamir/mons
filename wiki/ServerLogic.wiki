@@ -9,6 +9,7 @@ Here is how it works.
 
   * It is known that the only way to modify the gamestate is through *actions*.
   * The server receives an *action* from HTTP. In order to identify the context of the action, each action is supplemented with a respective Game ID (can be omitted when the action is not specific-game related) and ID of the User (mandatory) issuing the action.
+  * If a game instance with the specified game id is not instantiated in the session, the server loads it from the database and puts it there.
   * The server parses, validates and dispatches the action to the corresponding logic, mapping it to a class member function and passing it any extra parameters that were given through the request.
   * The action-mapped function gets called by the dispatcher, returning a value of whether or not the execution of the action went smoothly.
   * The dispatcher logs the action along with its resulting status and gives the action result back to the requester.
