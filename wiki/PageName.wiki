@@ -1,0 +1,15 @@
+#summary Action Specification
+
+= Introduction =
+
+This paper described the details involved with the server actions.
+
+
+= Action Request =
+
+Each action request should be supplemented with the following parameters:
+
+  * `$action` - Action name
+  * `$uid` - ID of the user performing the action
+  * `$gid` - ID of the game in which context the action should be performed, if available
+  * `$param` - an associative array of [name -> value] pairs to be passed to the action function
