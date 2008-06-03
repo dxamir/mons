@@ -6,8 +6,9 @@
 This paper described the details involved with the server actions.
 
 
-= Action Request =
+= Performing Actions =
 
+== Action Request ==
 Each action request should be supplemented with the following parameters:
 
   * `$action` - Action name
@@ -15,8 +16,7 @@ Each action request should be supplemented with the following parameters:
   * `$gid` - ID of the game in which context the action should be performed, if available
   * `$param` - an associative array of (name => value) pairs to be passed to the action function
 
-= Action Response =
-
+== Action Response ==
 Each action gets a mandatory XML response with action execution status and optional message. Sample response:
 
 {{{
@@ -37,3 +37,21 @@ Message type attribute can be any of the following:
 || 0 || Notice ||
 || 1 || Error ||
 || 2 || Warning ||
+
+----
+
+= Action Types =
+
+== tell ==
+Sends the specified message to the chat.
+
+==== Result ====
+a *chat* event is registered for the respective player(s) with the given message.
+
+==== Parameters ====
+|| *Name* || *Description* ||
+||`message`||Text of the message to send||
+||`to`||User ID to receive the message, omit for sending the message to the current room of the sender||
+
+== turn ==
+Makes a turn 
