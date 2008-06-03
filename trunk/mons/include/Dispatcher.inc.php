@@ -8,7 +8,7 @@
 	 */
 
 
- 	require_once('Command.inc.php');
+ 	require_once('Action.inc.php');
 
 
 
@@ -28,7 +28,7 @@
 			$gid = 'g';
 			$param = 'p';
 		
-			return new Command($request[$action], $request[$uid], $request[$gid], $request[$param]);
+			return new Action($request[$action], $request[$uid], $request[$gid], $request[$param]);
 		}
 
 		/**
@@ -37,8 +37,9 @@
 		 * @param Command $command
 		 * @return bool
 		 */
-		function validate($command)
+		function validate($action, $game)
 		{
+			/*
 			$games = $_SESSION['games'];		// active games instances
 			$game = $_SESSION['game'];			// the game interface object
 			
@@ -46,9 +47,10 @@
 			// check the game exists and is active			
 			if ($games && !array_key_exists($command->gid, $games))
 				return false;
+			*/
 				
 			// check the command exists
-			if (!method_exists($game, 'cmd' . $command->action))
+			if (!method_exists($game, 'do' . $action->name))
 				return false;
 				
 				
@@ -59,21 +61,26 @@
 		/**
 		 * Main function for dispatching. Dispatches the given request to the matching command and returns the response.
 		 *
+		 * Note that this currently assumes the game is in the session and doesn't load it when it is not. See @todo.
+		 * 
 		 * @param map $request
+		 * @todo add the logic for http://code.google.com/p/mons/wiki/ServerLogic, section 1 pt. 3
 		 */
 		function dispatch($request)
 		{
-			$command = $this->parse($request);
+			$action = $this->parse($request);
 			
-			if (!$this->validate($command))
-				exit;						// die, the command does not validate
+			$game = $_SESSION['game'][1];
 
-			$game = $_SESSION['game'];
-			
+			if (!$this->validate($action, $game))
+				return new ActionResponse(new Message('Action does not validate: ' . $action->name, 1), 1);
 
-			//$game->context()
-			//$game->{$command->action}();				
+			$call = 'do' . $action->name;
 			
+			// call the action
+			$actionResponse = $game->$call($action->param, $action->gid, $action->uid);
+			
+			return $actionResponse;
 		}
 		
 		
