@@ -6,8 +6,9 @@
 == Implementation ==
   * Incorporate `CManager`
   * Fully implement `MonopolyGame::doTalk()`
-  * Logging of actions in `Dispatcher`
   * Events fetching
+
+  * ~~Logging of actions in `Dispatcher`~~
 
 == Design ==
   * Finish the complete specification for all actions in Monopoly
