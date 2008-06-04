@@ -9,6 +9,7 @@
 
 
  	require_once('Action.inc.php');
+ 	require_once('core/ActionLogger.inc.php');
 
 
 
@@ -68,12 +69,16 @@
 		 */
 		function dispatch($request)
 		{
+			global $actionLogger;
+			
 			$action = $this->parse($request);
 			
 			$game = $_SESSION['game'][1];
 
 			if (!$this->validate($action, $game))
 				return new ActionResponse(new Message('Action does not validate: ' . $action->name, 1), 1);
+				
+			$actionLogger->log($action);
 
 			$call = 'do' . $action->name;
 			

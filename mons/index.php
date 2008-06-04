@@ -12,6 +12,10 @@
 
 
 	session_start();
+	
+	/*** DEV -- SET UP A DUMMY GAME INSTANCE ***/
+	if (!$_SESSION['game'][1])
+		$_SESSION['game'][1] = new MonopolyGame();
 
 
 	$dispatcher = new Dispatcher();
