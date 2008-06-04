@@ -1,0 +1,13 @@
+#summary Dev TODO list
+#labels todo
+
+= TODO =
+
+== Implementation ==
+  * Incorporate `CManager`
+  * Fully implement `MonopolyGame::doTalk()`
+  * Logging of actions in `Dispatcher`
+  * Events fetching
+
+== Design ==
+  * Finish the complete specification for all actions in Monopoly
