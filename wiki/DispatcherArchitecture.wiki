@@ -6,7 +6,7 @@
 Add your content here.
 
 = Commands =
-Everything that changes the game state in any way is a Command. It can be said that a Command is a game state change unit. Commands have the following attributes:
+Everything that changes the game state in any way is an Action. It can be said that an Action is a game state change unit. Actions have the following attributes:
 
   * `$action` Action ID
   * `$uid` ID of the user who performed the action
