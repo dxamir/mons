@@ -25,16 +25,16 @@ Each action gets a mandatory XML response with action execution status and optio
 </ActionResponse>
 }}}
 
-Response status attribute can have one of the following values:
+Response status attribute can have one of the following values (bold signifies the default value if the attribute is ommitted):
 
 || *Status* || *Description* ||
-|| 0 || Success ||
+|| *0* || Success ||
 || 1 || Error ||
 
 Message type attribute can be any of the following:
 
 || *Type* || *Description* ||
-|| 0 || Notice ||
+|| *0* || Notice ||
 || 1 || Error ||
 || 2 || Warning ||
 
