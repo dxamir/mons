@@ -51,7 +51,7 @@
 			
 			
 			
-			return fwrite($this->handle, $log);
+			return fwrite($this->handle, $log . PHP_EOL);
 		}
 	}
 	
