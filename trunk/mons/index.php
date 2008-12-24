@@ -8,7 +8,7 @@
 	require_once('include/Database.inc.php');
 	require_once('include/Dispatcher.inc.php');
  	require_once('include/core/xml/ActionResponse.inc.php');
- 	require_once('include/game/MonopolyGame.inc.php');
+ 	require_once('include/game/monopoly/MonopolyGame.inc.php');
 
 
 	session_start();

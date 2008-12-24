@@ -17,10 +17,10 @@
 	{
 	
 		/**
-		 * Parses the request map, returning a command
+		 * Parses the request map, returning an action
 		 *
 		 * @param map $request
-		 * @return Command
+		 * @return Action
 		 */
 		function parse($request)
 		{
@@ -42,7 +42,7 @@
 		{
 			/*
 			$games = $_SESSION['games'];		// active games instances
-			$game = $_SESSION['game'];			// the game interface object
+			$game = $_SESSION['game'];		// the game interface object
 			
 			
 			// check the game exists and is active			
