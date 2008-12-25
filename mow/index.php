@@ -9,6 +9,9 @@
 	<title>mow: Monopoly Web</title>
 	
 	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<script src="js/mootools.js"></script>
+	<script src="js/mow.js"></script>
 </head>
 
 <body>
