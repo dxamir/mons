@@ -1,0 +1,20 @@
+.field
+{
+
+}
+
+fieldset
+{
+	margin: 20px;
+	width: 400px;
+	float: left;
+}
+
+fieldset label
+{
+	width: 150px;
+	display: block;
+	float: left;
+	text-align: right;
+	padding-right: 10px;
+}
